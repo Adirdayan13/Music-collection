@@ -1,0 +1,17 @@
+{{#if edit}}
+<div class="edit">
+    <p>Edit your collection by ID</p>
+    <br>
+    <form action="editVinyl" method="post" id="edit-form">
+        <input type="text" name="id" placeholder="ID">
+        <input type="text" name="first" placeholder="First">
+        <input type="text" name="last" placeholder="Last">
+        <input type="text" name="album" placeholder="Album">
+        <input type="text" name="genre" placeholder="Genre">
+        <input type="text" name="year" placeholder="Year">
+        <input type="text" name="price" placeholder="Price">
+        <br><br>
+        <button>Edit info by ID</button>
+    </form>
+</div>
+{{/if}}

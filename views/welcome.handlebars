@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+    <div class="search-input">
+        <br>
+        <p>Search for anything in the collection</p>
+        <input type="text" id="myInput" placeholder="Search" autocomplete="off">
+    <br><br>
+<table style="width:100%" id="myTable">
+  <tr>
+    <th>ID</th>
+    <th>Artist Firstname</th>
+    <th>Artist Lastname</th>
+    <th>Album / EP</th>
+    <th>Genre</th>
+    <th>Year</th>
+    <th>Price €</th>
+  </tr>
+{{#each results}}
+  <tr class="inputs">
+      <td>{{this.id}}</td>
+      <td>{{this.artistfirst}}</td>
+      <td>{{this.artistlast}}</td>
+      <td>{{this.album}}</td>
+      <td>{{this.genre}}</td>
+      <td>{{this.year}}</td>
+      <td>{{this.price}}</td>
+  </tr>
+ {{/each}}
+</table>
+
+{{#if pricesArr}}
+    <p class="total">Total collection price: {{sum pricesArr}}</p>
+{{/if}}
+
+<br>
+<div class="addEdit">
+    <form action="add" method="get">
+        <button>Add</button>
+    </form>
+    <form action="edit" method="get">
+        <button>Edit</button>
+    </form>
+    <form action="delete" method="get">
+        <button class="delete">Delete</button>
+    </form>
+</div>
+{{#if numberNotFound}}
+    <p class="numberNotFound">ID number was not found, please try again.<p>
+{{/if}}
+
+{{#if edit}}
+<div class="edit">
+    {{#if error}}
+        <p style="color:red">Something went wrong, please try again.<p>
+    {{/if}}
+    <p>Edit your collection by ID</p>
+    <br>
+    <form action="edit" method="post" id="edit-form" autocomplete="off">
+        <input type="text" name="id" placeholder="ID" required>
+        <input type="text" name="first" placeholder="First" required>
+        <input type="text" name="last" placeholder="Last" required>
+        <input type="text" name="album" placeholder="Album / EP" required>
+        <input type="text" name="genre" placeholder="Genre">
+        <input type="text" name="year" placeholder="Year">
+        <input type="text" name="price" placeholder="Price">
+        <br><br>
+        <button>Edit info by ID</button>
+    </form>
+</div>
+{{/if}}
+{{#if add}}
+<div class="add">
+    {{#if error}}
+        <p style="color:red">Something went wrong, please try again.<p>
+    {{/if}}
+    <p>Add to your collection</p>
+    <br>
+    <form action="addvinyl" method="post" id="add" autocomplete="off">
+        <input type="text" name="first" placeholder="First" required>
+        <input type="text" name="last" placeholder="Last" required>
+        <input type="text" name="album" placeholder="Album / EP" required>
+        <input type="text" name="genre" placeholder="Genre">
+        <input type="text" name="year" placeholder="Year">
+        <input type="text" name="price" placeholder="Price">
+        <br><br>
+        <button>Add vinyl to collection</button>
+    </form>
+</div>
+{{/if}}
+{{#if delete}}
+    <div>
+        <form action="deletevinyl" method="post" id="delete" autocomplete="off">
+            <p>Insert your ID number you want to delete</p>
+            <br>
+            <input type="number" name="idDelete" placeholder="ID number" required>
+            <p class="sure none">Are you sure you want to delete this vinyl ?</p>
+            <button class="delete-after none">Delete vinyl from collection</button>
+        </form>
+        <br>
+        <button class="delete-before">Delete vinyl from collection</button>
+    </div>
+{{/if}}
+<script src="jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="script.js" charset="utf-8"></script>
+</body>
