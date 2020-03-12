@@ -1,59 +1,71 @@
 html {
-    margin: 0;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    background-color: #00bcd433;
-    border: 5px solid white;
-    overflow-x: hidden;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: #00bcd433;
+  border: 5px solid white;
+  overflow-x: hidden;
+}
+
+a {
+  color: white;
 }
 
 #add {
-    width: 100%;
-    text-align: center;
-    position: absolute;
+  width: 100%;
+  text-align: center;
+  position: absolute;
 }
 
 h1,
 .search-input {
-    text-align: center;
+  text-align: center;
 }
 
 h1,
+h3,
 p {
-    font-family: "Bangers", cursive;
+  font-family: "Bangers", cursive;
 }
 
 td {
-    font-family: "Oswald", sans-serif;
+  font-family: "Oswald", sans-serif;
+}
+
+h3 {
+  bottom: 0px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
 }
 
 .selected {
-    background-color: brown;
-    color: #fff;
+  background-color: brown;
+  color: #fff;
 }
 
 input[name="id"] {
-    border: 2px solid red;
+  border: 2px solid red;
 }
 
 .addEdit {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .none {
-    display: none;
+  display: none;
 }
 
 .sure,
 .numberNotFound {
-    color: #ff0505;
-    font-weight: 700;
-    font-size: 24px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+  color: #ff0505;
+  font-weight: 700;
+  font-size: 24px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 /* .error {
@@ -65,44 +77,44 @@ input[name="id"] {
 } */
 
 input {
-    text-align: center;
-    border-radius: 10px;
-    outline: none;
+  text-align: center;
+  border-radius: 10px;
+  outline: none;
 }
 
 button {
-    border-radius: 10px;
-    margin: 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    /* font-family: "Oswald", sans-serif;
+  border-radius: 10px;
+  margin: 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  /* font-family: "Oswald", sans-serif;
     font-size: 15px; */
 }
 
 button:hover {
-    background: black;
-    color: white;
+  background: black;
+  color: white;
 }
 
 .delete:hover,
 .delete-before:hover,
 .delete-after:hover {
-    background-color: red;
-    color: white;
+  background-color: red;
+  color: white;
 }
 
 .turntable {
-    width: 50px;
+  width: 50px;
 }
 
 .total {
-    float: right;
-    margin-right: 10px;
+  float: right;
+  margin-right: 10px;
 }
 
 .page-not-found-gif {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, 0%);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
