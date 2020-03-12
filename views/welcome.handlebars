@@ -17,8 +17,7 @@ table, th, td {
 <table style="width:100%" id="myTable">
   <tr>
     <th>ID</th>
-    <th>Artist Firstname</th>
-    <th>Artist Lastname</th>
+    <th>Artist Name</th>
     <th>Album / EP</th>
     <th>Genre</th>
     <th>Year</th>
@@ -27,8 +26,7 @@ table, th, td {
 {{#each results}}
   <tr class="inputs">
       <td>{{this.id}}</td>
-      <td>{{this.artistfirst}}</td>
-      <td>{{this.artistlast}}</td>
+      <td>{{this.artistname}}</td>
       <td>{{this.album}}</td>
       <td>{{this.genre}}</td>
       <td>{{this.year}}</td>
@@ -66,8 +64,7 @@ table, th, td {
     <br>
     <form action="edit" method="post" id="edit-form" autocomplete="off">
         <input type="text" name="id" placeholder="ID" required>
-        <input type="text" name="first" placeholder="First" required>
-        <input type="text" name="last" placeholder="Last" required>
+        <input type="text" name="artistname" placeholder="Artist name" required>
         <input type="text" name="album" placeholder="Album / EP" required>
         <input type="text" name="genre" placeholder="Genre">
         <input type="text" name="year" placeholder="Year">
@@ -85,8 +82,7 @@ table, th, td {
     <p>Add to your collection</p>
     <br>
     <form action="addvinyl" method="post" id="add" autocomplete="off">
-        <input type="text" name="first" placeholder="First" required>
-        <input type="text" name="last" placeholder="Last" required>
+        <input type="text" name="artistname" placeholder="Artist name" required>
         <input type="text" name="album" placeholder="Album / EP" required>
         <input type="text" name="genre" placeholder="Genre">
         <input type="text" name="year" placeholder="Year">

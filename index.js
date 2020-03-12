@@ -48,19 +48,18 @@ app.get("/home", (req, res) => {
 
 app.post("/addvinyl", (req, res) => {
   console.log("POST ADD VINYL");
-  let artist_first = req.body.first;
-  let artist_last = req.body.last;
+  let artistname = req.body.artistname;
   let album = req.body.album;
   let genre = req.body.genre;
   let year = req.body.year;
   let price = req.body.price;
-  console.log(artist_first, artist_last, album, genre, year, price);
-  if (!artist_first || !artist_last || !album) {
+  console.log("req.body: ", req.body);
+  if (!artistname || !album) {
     res.redirect("/home");
     return;
   }
 
-  db.addVinyl(artist_first, artist_last, album, genre, year, price)
+  db.addVinyl(artistname, album, genre, year, price)
     .then(() => {
       res.redirect("/home");
     })
@@ -77,27 +76,38 @@ app.get("addvinyl", (req, res) => {
 app.post("/edit", (req, res) => {
   console.log("POST EDIT");
   let id = req.body.id;
-  let artistfirst = req.body.first;
-  let artistlast = req.body.last;
+  let artistname = req.body.artistname;
   let album = req.body.album;
   let genre = req.body.genre;
   let year = req.body.year;
   let price = req.body.price;
-  console.log("req.body from edit: ", req.body);
-  if (!artistfirst || !artistlast || !album) {
+  if (!artistname || !album) {
     res.redirect("/home");
     return;
   }
-  db.addOrUpdate(id, artistfirst, artistlast, album, genre, year, price)
-    .then(() => {
-      res.redirect("/home");
+  db.addOrUpdate(id, artistname, album, genre, year, price)
+    .then(results => {
+      if (results.rowCount == 0) {
+        db.getVinyl().then(results => {
+          res.render("welcome", {
+            results,
+            numberNotFound: "numberNotFound"
+          });
+        });
+        return;
+      }
+      db.getVinyl().then(results => {
+        res.render("welcome", {
+          results
+        });
+      });
     })
     .catch(err => {
       console.log("error from addOrUpdate: ", err);
       db.getVinyl().then(results => {
         res.render("welcome", {
           results,
-          error: "error",
+          numberNotFound: "numberNotFound",
           edit: "edit"
         });
       });
@@ -109,11 +119,6 @@ app.get("/edit", (req, res) => {
   // let pricesArr = [];
   db.getVinyl()
     .then(results => {
-      // results.forEach(result => {
-      //     pricesArr.push(result.price);
-      // });
-      // console.log("pricesArr: ", pricesArr);
-
       res.render("welcome", {
         results,
         edit: "edit"
