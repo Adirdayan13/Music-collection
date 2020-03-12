@@ -35,9 +35,12 @@ td {
 
 h3 {
   bottom: 0px;
-  /* position: sticky; */
-  text-align: center;
-  width: 100%;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  /* text-align: center; */
+  width: 50%;
+  position: static;
+  transform: translate(50%, 10px);
 }
 
 .selected {
