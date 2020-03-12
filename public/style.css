@@ -2,7 +2,7 @@ html {
   margin: 0;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background-color: #00bcd433;
   border: 5px solid white;
   overflow-x: hidden;
@@ -35,7 +35,7 @@ td {
 
 h3 {
   bottom: 0px;
-  position: fixed;
+  /* position: sticky; */
   text-align: center;
   width: 100%;
 }
