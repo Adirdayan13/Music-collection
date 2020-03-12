@@ -2,6 +2,8 @@ const db = require("./db");
 const express = require("express");
 const app = express();
 const hb = require("express-handlebars");
+var helpers = require("handlebars-helpers")();
+var sum = helpers.sum();
 
 // configures express to use express-handlebars
 app.engine("handlebars", hb());
