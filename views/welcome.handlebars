@@ -33,9 +33,19 @@ table, th, td {
   </tr>
  {{/each}}
 </table>
-
+<form action="/" class="show-total" method="get">
+    <button>Show total price</button>
+</form>
 {{#if pricesArr}}
     <p class="total">Total collection price: {{sum pricesArr}}</p>
+    <script>
+        document.querySelector('.show-total').style.display = "none";
+        (function() {
+            var element = document.querySelector(".total");
+            console.log("element: ", element);
+            element.scrollIntoView();
+        }());
+    </script>
 {{/if}}
 
 <br>
