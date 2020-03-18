@@ -53,7 +53,6 @@ app.post("/addvinyl", (req, res) => {
   let genre = req.body.genre;
   let year = req.body.year;
   let price = req.body.price;
-  console.log("req.body: ", req.body);
   if (!artistname || !album) {
     res.redirect("/home");
     return;

@@ -8,7 +8,6 @@ table, th, td {
 </style>
 </head>
 <body>
-
     <div class="search-input">
         <br>
         <p>Search for anything in the collection</p>
@@ -62,7 +61,7 @@ table, th, td {
     {{/if}}
     <p>Edit your collection by ID</p>
     <br>
-    <form action="edit" method="post" id="edit-form" autocomplete="off">
+    <form action="edit" method="post" class="edit-form" id="edit-form" autocomplete="off">
         <input type="text" name="id" placeholder="ID" required>
         <input type="text" name="artistname" placeholder="Artist name" required>
         <input type="text" name="album" placeholder="Album / EP" required>
@@ -73,6 +72,12 @@ table, th, td {
         <button>Edit info by ID</button>
     </form>
 </div>
+<script>
+    (function() {
+        var element = document.querySelector(".edit-form");
+        element.scrollIntoView();
+    }());
+</script>
 {{/if}}
 {{#if add}}
 <div class="add">
@@ -81,7 +86,7 @@ table, th, td {
     {{/if}}
     <p>Add to your collection</p>
     <br>
-    <form action="addvinyl" method="post" id="add" autocomplete="off">
+    <form action="addvinyl" method="post" class="add-form" id="add" autocomplete="off">
         <input type="text" name="artistname" placeholder="Artist name" required>
         <input type="text" name="album" placeholder="Album / EP" required>
         <input type="text" name="genre" placeholder="Genre">
@@ -91,10 +96,16 @@ table, th, td {
         <button>Add vinyl to collection</button>
     </form>
 </div>
+<script>
+    (function() {
+        var element = document.querySelector(".add-form");
+        element.scrollIntoView();
+    }());
+</script>
 {{/if}}
 {{#if delete}}
     <div>
-        <form action="deletevinyl" method="post" id="delete" autocomplete="off">
+        <form action="deletevinyl" method="post" class="delete-form" id="delete" autocomplete="off">
             <p>Insert your ID number you want to delete</p>
             <br>
             <input type="number" name="idDelete" placeholder="ID number" required>
@@ -104,6 +115,12 @@ table, th, td {
         <br>
         <button class="delete-before">Delete vinyl from collection</button>
     </div>
+    <script>
+        (function() {
+            var element = document.querySelector(".delete-form");
+             element.scrollIntoView();
+        }());
+    </script>
 {{/if}}
 <br><br><br><br>
 <h3>This is just an example, everyone can edit this collection</h3>

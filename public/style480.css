@@ -1,0 +1,22 @@
+@media screen and (max-width: 480px) {
+  html {
+    border: none;
+  }
+  body {
+    max-height: 100vh;
+  }
+  .search-input {
+    height: 100vh;
+  }
+  #myTable {
+    height: 100%;
+  }
+  .inputs {
+    font-size: 1rem;
+  }
+  h3 {
+    margin-top: 25%;
+    transform: translate(0px, 0px);
+    width: 100%;
+  }
+}
