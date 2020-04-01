@@ -1,3 +1,9 @@
-Platform to create your own music collection to keep track of your music by adding / editing / deleting and searching option.
+# Music collection
 
-Built with Handlebars
+Platform to make collection of your music with option to add / edit / delete.
+
+Website hosted on Heroku and avaliable [here](https://vinyls-collection.herokuapp.com/home)
+
+Built with Handlebars.js
+
+![](Music-collection.gif)
