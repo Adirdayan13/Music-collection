@@ -9,6 +9,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "handlebars-helpers": "^0.10.0",
+    "minimist": "^1.2.5",
     "spiced-pg": "^1.0.0"
   },
   "devDependencies": {},
