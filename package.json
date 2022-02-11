@@ -7,7 +7,7 @@
     "cookie-session": "^1.4.0",
     "csurf": "^1.11.0",
     "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
+    "express-handlebars": "^5.3.1",
     "handlebars-helpers": "^0.10.0",
     "minimist": "^1.2.5",
     "spiced-pg": "^1.0.0"
